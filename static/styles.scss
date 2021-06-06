@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+$background-color: #756173;
+$textarea-color: #f7cdf2;
+$input-background-color: #f7cdf2;
+$send-button-color: #753e70;
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	height: 100vh;
+}
+
+#root {
+	width: 100%;
+	height: 100%;
+	background-color: $background-color;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#chat-container {
+	width: 50%;
+	height: 65%;
+	//background-color: red;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	border-radius: 2em;
+
+	#messages-area {
+		background-color: $textarea-color;
+		flex: 1;
+		border-radius: 2em;
+		padding: 2em;
+		position: relative;
+		overflow: hidden;
+
+		.message-wrapper {
+			display: flex;
+			justify-content: space-between;
+
+			.author-message-wrapper {
+				word-wrap: break-word;
+				text-overflow: ellipsis;
+				max-width: 100%;
+				overflow: hidden;
+				display: flex;
+			}
+
+			.message-timestamp {
+				color: gray;
+			}
+		}
+	}
+
+	#input-message-wrapper {
+		height: 2em;
+		background-color: $textarea-color;
+		border-radius: 2em;
+		padding-left: 1em;
+		margin-top: 0.5em;
+		display: flex;
+
+		#input-message {
+			width: 100%;
+			height: 100%;
+			border: none;
+			outline: none;
+			border-radius: 2em;
+			background-color: $input-background-color;
+		}
+
+		#send-button {
+			width: 8rem;
+			height: 100%;
+			background-color: $send-button-color;
+			border-radius: 2rem;
+			border: none;
+			outline: none;
+			color: $textarea-color;
+			transition: font-size 0.2s;
+		}
+
+		#send-button:hover {
+			font-size: 15px;
+			cursor: pointer;
+		}
+	}
+}
